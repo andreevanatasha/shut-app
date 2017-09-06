@@ -36,15 +36,10 @@ class App extends React.Component {
 
 
     render () {
-        let styles = {
-                width: screen.availWidth,
-                height: screen.availHeight,
-                background: this.state.background
-        };
 
         if (this.state.fullscreen === false) { 
             return (
-                <div className="main" style={styles}> 
+                <div className="main" style={{background: this.state.background}} > 
                     <div className="header">
                         <button className="btn clear" onClick={this.clearInput}>Clear</button>
                         <button className="btn run" onClick={this.openFullScreen}>Run</button>
@@ -54,7 +49,7 @@ class App extends React.Component {
                 )
         } else {
             return (
-            <div className='rotate' style={styles}>
+            <div className='rotate' style={{background: this.state.background}}>
                 <button className="btn" onClick={this.closeFullScreen}>Close</button>
                 <Textfit>
                   {this.state.text}
