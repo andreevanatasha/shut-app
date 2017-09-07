@@ -63,9 +63,15 @@ class App extends React.Component {
                 <div className="main" style={{background: this.state.background}} > 
                     <div className="header" style={{background: this.state.background}}>
                         <button className="btn clear" onClick={this.clearInput}>Clear</button>
-                        <button className="btn run" onClick={this.openFullScreen}>Run</button>
+                        <button className="btn run" onClick={this.openFullScreen} disabled={!this.state.text}>Run</button>
                     </div>
-                    <textarea className="input" style={{background: this.state.background}} onChange={this.handleChange} placeholder={this.state.placeholder} type="text" value={this.state.text} />
+                    <textarea 
+                        className="input" 
+                        style={{background: this.state.background}} 
+                        onChange={this.handleChange} 
+                        placeholder={this.state.placeholder} 
+                        type="text" 
+                        value={this.state.text} />
                 </div>
                 )
         } else {
