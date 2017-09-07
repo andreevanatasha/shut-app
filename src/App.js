@@ -51,7 +51,7 @@ class App extends React.Component {
             return (
             <div className='rotate' style={{background: this.state.background}}>
                 <button className="btn" onClick={this.closeFullScreen}>Close</button>
-                <Textfit>
+                <Textfit max={500} style={{height: '100%'}}>
                   {this.state.text}
                 </Textfit>
             </div>
