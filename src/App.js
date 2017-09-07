@@ -37,10 +37,31 @@ class App extends React.Component {
 
     render () {
 
+        let rotate, screenWidth, screenHeight;
+        screenWidth = window.innerWidth
+        screenHeight = window.innerHeight;
+
+        if (screenWidth < screenHeight) {
+            rotate = {
+                width: screenHeight,
+                height: screenWidth,
+                background: this.state.background,
+                transform: "rotate(90deg)",
+                transformOrigin: "bottom left",
+                top: "-100vw"
+            };
+        } else {
+             rotate = {
+                width: screenWidth,
+                height: screenHeight,
+                background: this.state.background
+            };
+        };
+
         if (this.state.fullscreen === false) { 
             return (
                 <div className="main" style={{background: this.state.background}} > 
-                    <div className="header">
+                    <div className="header" style={{background: this.state.background}}>
                         <button className="btn clear" onClick={this.clearInput}>Clear</button>
                         <button className="btn run" onClick={this.openFullScreen}>Run</button>
                     </div>
@@ -49,15 +70,15 @@ class App extends React.Component {
                 )
         } else {
             return (
-            <div className='rotate' style={{background: this.state.background}}>
-                <button className="btn" onClick={this.closeFullScreen}>Close</button>
+            <div className='fullscreen' style={rotate}>
+                <button className="btn close" onClick={this.closeFullScreen}>Close</button>
                 <Textfit max={500} style={{height: '100%'}}>
                   {this.state.text}
                 </Textfit>
             </div>
             )
         };
-  }
+    }
 }
 
 export default App;
