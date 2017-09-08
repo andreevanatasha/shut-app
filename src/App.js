@@ -10,7 +10,7 @@ class App extends React.Component {
 
         this.state = {
             text: '',
-            placeholder: 'Type anything\nSwipe to change background',
+            placeholder: 'Type anything. \nSwipe to change background.',
             background_id: 0,
             fullscreen: false,
             backgrounds: [
@@ -19,7 +19,8 @@ class App extends React.Component {
                 '#9673e1',
                 '#ecb755'
             ],
-            backgrounds_number: 3
+            backgrounds_number: 3,
+            orientation: 'portrait'
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -28,10 +29,15 @@ class App extends React.Component {
         this.openFullScreen = this.openFullScreen.bind(this);
         this.onSwipeLeft = this.onSwipeLeft.bind(this);
         this.onSwipeRight = this.onSwipeRight.bind(this);
+        this.changeOrientation = this.changeOrientation.bind(this);
     }
 
     handleChange(e) {
         this.setState({text: e.target.value});
+    }
+
+    changeOrientation(){
+        this.setState({orientation: window.orientation});
     }
 
     clearInput() {
@@ -68,7 +74,15 @@ class App extends React.Component {
         };
     }
 
-    render () {
+    componentDidMount() {
+        window.addEventListener('orientationchange', this.changeOrientation);
+    }
+
+    componentDidUnmount() {
+        window.removeEventListener('orientationchange', this.changeOrientation);
+    }
+
+    render() {
         let rotate, screenWidth, screenHeight, background_color;
         screenWidth = window.innerWidth
         screenHeight = window.innerHeight;
@@ -113,16 +127,16 @@ class App extends React.Component {
                 )
         } else {
             return (
-            <Swipe
-                onSwipeLeft={this.onSwipeLeft}
-                onSwipeRight={this.onSwipeRight} >
-                <div className='fullscreen' style={rotate}>
-                    <button className="btn close" onClick={this.closeFullScreen}>Close</button>
-                    <Textfit max={500} style={{height: '100%'}}>
-                      {this.state.text}
-                    </Textfit>
-                </div>
-            </Swipe>
+                <Swipe
+                    onSwipeLeft={this.onSwipeLeft}
+                    onSwipeRight={this.onSwipeRight} >
+                    <div className='fullscreen' style={rotate}>
+                        <button className="btn close" onClick={this.closeFullScreen}>Close</button>
+                        <Textfit max={500} style={{height: '100%'}}>
+                          {this.state.text}
+                        </Textfit>
+                    </div>
+                </Swipe>
             )
         };
     }
