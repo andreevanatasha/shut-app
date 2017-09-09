@@ -1,3 +1,9 @@
+.main {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
 .header {
   position: fixed;
   height: 10%;
@@ -33,11 +39,11 @@
 .input {
   position: fixed;
   top: 10%;
-  font-size: 50px;
+  left: 3%;
+  font-size: 3em;
   line-height: 1;
-  width: 100%;
+  width: 94%;
   height: 90%;
-  padding: 10px;
 
     border: none;
     overflow: auto;

@@ -78,13 +78,13 @@ class App extends React.Component {
         window.addEventListener('orientationchange', this.changeOrientation);
     }
 
-    componentDidUnmount() {
+    componentWillUnmount() {
         window.removeEventListener('orientationchange', this.changeOrientation);
     }
 
     render() {
         let rotate, screenWidth, screenHeight, background_color;
-        screenWidth = window.innerWidth
+        screenWidth = window.innerWidth;
         screenHeight = window.innerHeight;
         background_color = this.state.backgrounds[this.state.background_id];
 
@@ -110,7 +110,7 @@ class App extends React.Component {
                 <Swipe
                     onSwipeLeft={this.onSwipeLeft}
                     onSwipeRight={this.onSwipeRight} >
-                    <div className="main" style={{background: background_color}} > 
+                    <div className="main" style={{backgroundColor: background_color}} > 
                         <div className="header" style={{background: background_color}}>
                             <button className="btn clear" onClick={this.clearInput}>Clear</button>
                             <button className="btn run" onClick={this.openFullScreen} disabled={!this.state.text}>Run</button>
@@ -138,7 +138,7 @@ class App extends React.Component {
                     </div>
                 </Swipe>
             )
-        };
+        }
     }
 }
 
