@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  height: 7%;
+  height: 10%;
   width: 100%;
 }
 
@@ -32,7 +32,7 @@
 
 .input {
   position: fixed;
-  top: 7%;
+  top: 10%;
   font-size: 50px;
   line-height: 1;
   width: 100%;
