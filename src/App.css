@@ -34,6 +34,7 @@
 .fullscreen {
     position: fixed;
     text-align: center;
+    display: table;
 }
 
 .input {

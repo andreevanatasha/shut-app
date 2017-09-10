@@ -132,7 +132,7 @@ class App extends React.Component {
                     onSwipeRight={this.onSwipeRight} >
                     <div className='fullscreen' style={rotate}>
                         <button className="btn close" onClick={this.closeFullScreen}>Close</button>
-                        <Textfit max={500} style={{height: '100%'}}>
+                        <Textfit max={500} style={{height: '100%', display: 'table-cell', textAlign: 'center', verticalAlign: 'middle', width: '98%', left: '1%'}}>
                           {this.state.text}
                         </Textfit>
                     </div>
