@@ -112,7 +112,7 @@ class App extends React.Component {
                     onSwipeRight={this.onSwipeRight} >
                     <div className="main" style={{backgroundColor: background_color}} > 
                         <div className="header" style={{background: background_color}}>
-                            <button className="btn clear" onClick={this.clearInput}>Clear</button>
+                            <button className="btn clear" onClick={this.clearInput} disabled={!this.state.text}>Clear</button>
                             <button className="btn run" onClick={this.openFullScreen} disabled={!this.state.text}>Run</button>
                         </div>
                         <textarea 
