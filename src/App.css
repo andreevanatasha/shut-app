@@ -1,3 +1,9 @@
+.main {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
 .header {
   position: fixed;
   height: 90%;
@@ -28,49 +34,29 @@
 .fullscreen {
     position: fixed;
     text-align: center;
-    font-family: "Roboto", Times, serif;
-    color: #FFFFFF;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 54px;
-    font-size: 50px;
-    color: #FFFFFF;
-    right: -647px;
-
-
+    display: table;
 }
 
 .input {
   position: fixed;
-  top: 90%;
-  font-size: 50px;
-  /*line-height: 1;*/
-  width: 90%;
-  height: 10%;
-  padding: 10px;
+  top: 10%;
+  left: 3%;
+  font-size: 3em;
+  line-height: 1;
+  width: 94%;
+  height: 90%;
 
   width: 350px;
   left: 13px;
   top: 80px;
 
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-  font-size: 50px;
-  color: #FFFFFF;
+  border: none;
+  overflow: auto;
+  outline: none;
 
-
-
-    border: none;
-    overflow: auto;
-    outline: none;
-
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

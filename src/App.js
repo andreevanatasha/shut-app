@@ -78,13 +78,13 @@ class App extends React.Component {
         window.addEventListener('orientationchange', this.changeOrientation);
     }
 
-    componentDidUnmount() {
+    componentWillUnmount() {
         window.removeEventListener('orientationchange', this.changeOrientation);
     }
 
     render() {
         let rotate, screenWidth, screenHeight, background_color;
-        screenWidth = window.innerWidth
+        screenWidth = window.innerWidth;
         screenHeight = window.innerHeight;
         background_color = this.state.backgrounds[this.state.background_id];
 
@@ -110,9 +110,9 @@ class App extends React.Component {
                 <Swipe
                     onSwipeLeft={this.onSwipeLeft}
                     onSwipeRight={this.onSwipeRight} >
-                    <div className="main" style={{background: background_color}} > 
+                    <div className="main" style={{backgroundColor: background_color}} > 
                         <div className="header" style={{background: background_color}}>
-                            <button className="btn clear" onClick={this.clearInput}>Clear</button>
+                            <button className="btn clear" onClick={this.clearInput} disabled={!this.state.text}>Clear</button>
                             <button className="btn run" onClick={this.openFullScreen} disabled={!this.state.text}>Run</button>
                         </div>
                         <textarea 
@@ -132,13 +132,13 @@ class App extends React.Component {
                     onSwipeRight={this.onSwipeRight} >
                     <div className='fullscreen' style={rotate}>
                         <button className="btn close" onClick={this.closeFullScreen}>Close</button>
-                        <Textfit max={500} style={{height: '100%'}}>
+                        <Textfit max={500} style={{height: '100%', display: 'table-cell', textAlign: 'center', lineHeight: 1, verticalAlign: 'middle', width: '98%', left: '1%'}}>
                           {this.state.text}
                         </Textfit>
                     </div>
                 </Swipe>
             )
-        };
+        }
     }
 }
 
