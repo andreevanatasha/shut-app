@@ -9,7 +9,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            text: '',
+            text: 'An ultimate app for club communication. \nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.',
             placeholder: 'Type anything. \nSwipe to change background.',
             background_id: 0,
             fullscreen: false,
@@ -87,33 +87,23 @@ class App extends React.Component {
         screenWidth = window.innerWidth;
         screenHeight = window.innerHeight;
         background_color = this.state.backgrounds[this.state.background_id];
-
-        if (screenWidth < screenHeight) {
-            rotate = {
-                width: screenHeight,
-                height: screenWidth,
-                background: background_color,
-                transform: "rotate(90deg)",
-                transformOrigin: "bottom left",
-                top: "-100vw"
-            };
-        } else {
-             rotate = {
+        rotate = {
                 width: screenWidth,
                 height: screenHeight,
                 background: background_color
             };
-        };
 
         if (this.state.fullscreen === false) { 
             return (
                 <Swipe
                     onSwipeLeft={this.onSwipeLeft}
-                    onSwipeRight={this.onSwipeRight} >
+                    onSwipeRight={this.onSwipeRight}
+                    allowMouseEvents={true} >
                     <div className="main" style={{backgroundColor: background_color}} > 
                         <div className="header" style={{background: background_color}}>
                             <button className="btn clear" onClick={this.clearInput} disabled={!this.state.text}>Clear</button>
                             <button className="btn run" onClick={this.openFullScreen} disabled={!this.state.text}>Run</button>
+                            <div className='logo'>Shut App</div>
                         </div>
                         <textarea 
                             className="input" 
@@ -122,6 +112,8 @@ class App extends React.Component {
                             placeholder={this.state.placeholder} 
                             type="text" 
                             value={this.state.text} />
+                        <img src="https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" style={{position: 'fixed', top: '85%', left: '2%'}}/>
+                        <p style={{position: 'fixed', top: '92%', left: '2%'}}>With love from St. Petersburg, Russia</p>
                     </div>
                 </Swipe>
                 )
@@ -129,7 +121,8 @@ class App extends React.Component {
             return (
                 <Swipe
                     onSwipeLeft={this.onSwipeLeft}
-                    onSwipeRight={this.onSwipeRight} >
+                    onSwipeRight={this.onSwipeRight}
+                    allowMouseEvents={true} >
                     <div className='fullscreen' style={rotate}>
                         <button className="btn close" onClick={this.closeFullScreen}>Close</button>
                         <Textfit max={500} style={{height: '100%', display: 'table-cell', textAlign: 'center', lineHeight: 1, verticalAlign: 'middle', width: '98%', left: '1%'}}>
