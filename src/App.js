@@ -14,10 +14,10 @@ class App extends React.Component {
             background_id: 0,
             fullscreen: false,
             backgrounds: [
-                '#f28ec2',
-                '#49c086',
-                '#9673e1',
-                '#ecb755'
+                '#0000ff',
+                '#FE2370',
+                '#3AF4D5',
+                '#090707'
             ],
             backgrounds_number: 3,
             orientation: 'portrait'
@@ -127,16 +127,18 @@ class App extends React.Component {
                 )
         } else {
             return (
-                <Swipe
+               <Swipe
                     onSwipeLeft={this.onSwipeLeft}
                     onSwipeRight={this.onSwipeRight} >
                     <div className='fullscreen' style={rotate}>
                         <button className="btn close" onClick={this.closeFullScreen}>Close</button>
-                        <Textfit max={500} style={{height: '100%', display: 'table-cell', textAlign: 'center', lineHeight: 1, verticalAlign: 'middle', width: '98%', left: '1%'}}>
-                          {this.state.text}
-                        </Textfit>
+                        <div style={{display: 'table', height: '98%', width: '98%', margin: 'auto'}}>
+	                        <Textfit max={500} style={{height: '100%', display: 'table-cell', textAlign: 'center', lineHeight: 1, verticalAlign: 'middle', width: '100%'}}>
+	                          {this.state.text}
+	                        </Textfit>
+                        </div>
                     </div>
-                </Swipe>
+                </Swipe> 
             )
         }
     }

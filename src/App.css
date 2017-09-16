@@ -34,7 +34,13 @@
 .fullscreen {
     position: fixed;
     text-align: center;
-    display: table;
+    display: flex;
+    align-content: center;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    color: #FFFFFF;
 }
 
 .input {
@@ -46,9 +52,10 @@
   width: 94%;
   height: 90%;
 
-  width: 350px;
-  left: 13px;
-  top: 80px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  color: #ffffff;
 
   border: none;
   overflow: auto;
@@ -60,5 +67,6 @@
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: pink;
+  color: white;
+  opacity: 0.75;
 }
