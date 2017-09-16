@@ -2,6 +2,8 @@ import React from 'react';
 import { Textfit } from 'react-textfit';
 import Swipe from 'react-easy-swipe';
 import './App.css';
+import trash from './img/trash.svg';
+import megaphone from './img/megaphone.svg';
 
 
 class App extends React.Component {
@@ -112,8 +114,8 @@ class App extends React.Component {
                     onSwipeRight={this.onSwipeRight} >
                     <div className="main" style={{backgroundColor: background_color}} > 
                         <div className="header" style={{background: background_color}}>
-                            <button className="btn clear" onClick={this.clearInput} disabled={!this.state.text}>Clear</button>
-                            <button className="btn run" onClick={this.openFullScreen} disabled={!this.state.text}>Run</button>
+                            <img src={trash} className='btn clear' onClick={this.clearInput} disabled={!this.state.text} />
+                            <img src={megaphone} className="btn run" onClick={this.openFullScreen} disabled={!this.state.text} />
                         </div>
                         <textarea 
                             className="input" 
