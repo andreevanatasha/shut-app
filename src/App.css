@@ -6,7 +6,7 @@
 
 .header {
   position: fixed;
-  height: 10%;
+  height: 90%;
   width: 100%;
 }
 
@@ -34,7 +34,13 @@
 .fullscreen {
     position: fixed;
     text-align: center;
-    display: table;
+    display: flex;
+    align-content: center;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    color: #FFFFFF;
 }
 
 .input {
@@ -46,15 +52,21 @@
   width: 94%;
   height: 90%;
 
-    border: none;
-    overflow: auto;
-    outline: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  color: #ffffff;
 
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: pink;
+  color: white;
+  opacity: 0.75;
 }
