@@ -1,3 +1,17 @@
+@font-face {
+font-family: 'Roboto';
+src: url('img/Roboto-Black.ttf') format('truetype');
+font-weight: 900;
+font-style: normal;
+ }
+
+@font-face {
+font-family: 'Roboto';
+src: url('img/Roboto-Bold.ttf') format('truetype');
+font-weight: bold;
+font-style: normal;
+}
+
 .main {
   position: fixed;
   height: 100%;
