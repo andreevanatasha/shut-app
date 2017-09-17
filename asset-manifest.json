@@ -1,6 +1,10 @@
 {
-  "main.css": "static/css/main.ecf6ce4b.css",
-  "main.css.map": "static/css/main.ecf6ce4b.css.map",
-  "main.js": "static/js/main.6f781784.js",
-  "main.js.map": "static/js/main.6f781784.js.map"
+  "main.css": "static/css/main.09819a5a.css",
+  "main.css.map": "static/css/main.09819a5a.css.map",
+  "main.js": "static/js/main.48c6940b.js",
+  "main.js.map": "static/js/main.48c6940b.js.map",
+  "static/media/Roboto-Black.ttf": "static/media/Roboto-Black.a77b7fc4.ttf",
+  "static/media/Roboto-Bold.ttf": "static/media/Roboto-Bold.afa7a91d.ttf",
+  "static/media/megaphone.svg": "static/media/megaphone.47638864.svg",
+  "static/media/trash.svg": "static/media/trash.54465003.svg"
 }
