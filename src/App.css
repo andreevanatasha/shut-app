@@ -1,3 +1,17 @@
+@font-face {
+font-family: 'Roboto';
+src: url('img/Roboto-Black.ttf') format('truetype');
+font-weight: 900;
+font-style: normal;
+ }
+
+@font-face {
+font-family: 'Roboto';
+src: url('img/Roboto-Bold.ttf') format('truetype');
+font-weight: bold;
+font-style: normal;
+}
+
 .main {
   position: fixed;
   height: 100%;
@@ -6,7 +20,7 @@
 
 .header {
   position: fixed;
-  height: 90%;
+  height: 10%;
   width: 100%;
 }
 
@@ -20,15 +34,24 @@
 }
 
 .btn.clear {
-  left: 1%;
+  left: 2%;
+  top: 2%;
+  height: 5%;
+  width: auto;
 }
 
 .btn.run {
-  right:1%;
+  right: 2%;
+  top: 2%;
+  height: 5%;
+  width: auto;
 }
 
 .btn.close {
-  right:1%;
+  right:2%;
+  top: 2%;
+  height: 6%;
+  width: auto;
 }
 
 .fullscreen {
@@ -41,6 +64,8 @@
     font-style: normal;
     font-weight: bold;
     color: #FFFFFF;
+
+    text-transform: uppercase;
 }
 
 .input {
