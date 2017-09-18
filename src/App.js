@@ -2,8 +2,7 @@ import React from 'react';
 import { Textfit } from 'react-textfit';
 import Swipe from 'react-easy-swipe';
 import './App.css';
-import trash from './img/trash.svg';
-import megaphone from './img/megaphone.svg';
+import { Button } from './Button';
 
 
 class App extends React.Component {
@@ -22,7 +21,8 @@ class App extends React.Component {
                 '#090707'
             ],
             backgrounds_number: 3,
-            orientation: 'portrait'
+            orientation: 'portrait',
+            disable: true
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -36,6 +36,14 @@ class App extends React.Component {
 
     handleChange(e) {
         this.setState({text: e.target.value});
+
+        /* if (e === '') {
+            this.setState({disable: true})
+        } else {
+            this.setState({disable: false})
+        };
+
+        console.log(this.state.disable); */
     }
 
     changeOrientation(){
@@ -114,8 +122,8 @@ class App extends React.Component {
                     onSwipeRight={this.onSwipeRight} >
                     <div className="main" style={{backgroundColor: background_color}} > 
                         <div className="header" style={{background: background_color}}>
-                            <img src={trash} className='btn clear' onClick={this.clearInput} disabled={!this.state.text} />
-                            <img src={megaphone} className="btn run" onClick={this.openFullScreen} disabled={!this.state.text} />
+                            <Button name='clear' disable={this.state.text} action={this.clearInput} />
+                            <Button name='run' disable={this.state.text} action={this.openFullScreen} />
                         </div>
                         <textarea 
                             className="input" 
@@ -133,7 +141,7 @@ class App extends React.Component {
                     onSwipeLeft={this.onSwipeLeft}
                     onSwipeRight={this.onSwipeRight} >
                     <div className='fullscreen' style={rotate}>
-                        <button className="btn close" onClick={this.closeFullScreen}>Close</button>
+                        <Button name='close' disable={this.state.text} action={this.closeFullScreen} />
                         <div style={{display: 'table', height: '98%', width: '98%', margin: 'auto'}}>
 	                        <Textfit max={500} style={{height: '100%', display: 'table-cell', textAlign: 'center', lineHeight: 1, verticalAlign: 'middle', width: '100%'}}>
 	                          {this.state.text}

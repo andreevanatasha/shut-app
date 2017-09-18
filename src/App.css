@@ -20,7 +20,7 @@ font-style: normal;
 
 .header {
   position: fixed;
-  height: 90%;
+  height: 10%;
   width: 100%;
 }
 
@@ -48,7 +48,10 @@ font-style: normal;
 }
 
 .btn.close {
-  right:1%;
+  right:2%;
+  top: 2%;
+  height: 6%;
+  width: auto;
 }
 
 .fullscreen {
