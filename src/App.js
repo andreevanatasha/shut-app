@@ -132,12 +132,12 @@ class App extends React.Component {
                     onSwipeLeft={this.onSwipeLeft}
                     onSwipeRight={this.onSwipeRight} >
                     <div className='fullscreen' style={rotate}>
-                    //height: 20% on the header ain't a neato solution but since we won't have rotation on web and won't have landscape mode on mobile it'll do
+                    {/*height: 20% on the header ain't a neato solution but since we won't have rotation on web and won't have landscape mode on mobile it'll do*/}
                         <div className="header" style={{background: background_color, flexDirection: 'row-reverse', height: '20%'}}>
                             <Button name='close' disable={this.state.text} action={this.closeFullScreen} />
                         </div>
                         <div style={{display: 'flex', flex: '1', justifyContent: 'center', alignContent: 'center'}}>
-	                        <Textfit max={500} style={{height: '100%', width: '100%', textAlign: 'center', lineHeight: 1, width: '100%', alignSelf: 'center'}}>
+	                        <Textfit max={500} style={{height: '100%', width: '100%', textAlign: 'center', lineHeight: 1, alignSelf: 'center'}}>
 	                          {this.state.text}
 	                        </Textfit>
                         </div>
