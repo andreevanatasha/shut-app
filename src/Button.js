@@ -13,9 +13,17 @@ export class Button extends React.Component {
         };
 
         if (this.props.disable === '') {
-            return <img alt={this.props.name} src={assets[this.props.name]} className={'btn '+this.props.name} style={{opacity: '0.75'}} />  
+            return (
+                <div className={'btn '+this.props.name}> 
+                    <img alt={this.props.name} src={assets[this.props.name]} className='img' style={{opacity: '0.75'}} />  
+                </div>
+                )
         } else {
-            return <img alt={this.props.name} src={assets[this.props.name]} className={'btn '+this.props.name} onClick={this.props.action} />  
+            return (
+                <div className={'btn '+this.props.name} onClick={this.props.action}> 
+                    <img alt={this.props.name} src={assets[this.props.name]} className='img' />  
+                </div>
+                )
         }
     }
 }
