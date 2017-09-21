@@ -41,10 +41,6 @@ font-style: normal;
 
 .btn {
   font-size: large;
-    outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +68,7 @@ font-style: normal;
 }
 
 .fullscreen {
-    position: fixed;
+    position: absolute;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -91,7 +87,7 @@ font-style: normal;
   font-size: 3em;
   line-height: 1;
   width: 94%;
-  height: 90%;
+  flex: 1;
 
   font-family: Roboto;
   font-style: normal;
