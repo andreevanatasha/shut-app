@@ -10,7 +10,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            text: '',
+            text: 'An ultimate app for club communication.\nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.',
             placeholder: 'Type anything. \nSwipe to change background.',
             background_id: 0,
             fullscreen: false,
@@ -84,27 +84,7 @@ class App extends React.Component {
     }
 
     render() {
-        let rotate, screenWidth, screenHeight, background_color;
-        screenWidth = window.innerWidth;
-        screenHeight = window.innerHeight;
-        background_color = this.state.backgrounds[this.state.background_id];
-
-        if (screenWidth < screenHeight) {
-            rotate = {
-                width: screenHeight,
-                height: screenWidth,
-                background: background_color,
-                transform: "rotate(90deg)",
-                transformOrigin: "bottom left",
-                top: "-100vw",
-            };
-        } else {
-             rotate = {
-                width: screenWidth,
-                height: screenHeight,
-                background: background_color
-            };
-        };
+        let background_color = this.state.backgrounds[this.state.background_id];
 
         if (this.state.fullscreen === false) { 
             return (
@@ -133,7 +113,7 @@ class App extends React.Component {
                     onSwipeLeft={this.onSwipeLeft}
                     onSwipeRight={this.onSwipeRight} 
                     allowMouseEvents={true} >
-                    <div className='fullscreen' style={rotate}>
+                    <div className='fullscreen' style={{backgroundColor: background_color}} >
                     {/*height: 20% on the header ain't a neato solution but since we won't have rotation on web and won't have landscape mode on mobile it'll do*/}
                         <div className="header" style={{background: background_color, flexDirection: 'row-reverse', height: '15%'}}>
                             <Button name='close' disable={this.state.text} action={this.closeFullScreen} />
