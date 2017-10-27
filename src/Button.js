@@ -1,7 +1,7 @@
 import React from 'react';
-import trash from './img/trash.svg';
-import megaphone from './img/megaphone.svg';
-import close from './img/close-browser.svg';
+import trash from './img/clear.svg';
+import megaphone from './img/run.svg';
+import close from './img/close.svg';
 
 export class Button extends React.Component {
 

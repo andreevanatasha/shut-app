@@ -68,7 +68,7 @@ font-style: normal;
 }
 
 .fullscreen {
-    position: absolute;
+    position: fixed;
     text-align: center;
     display: flex;
     flex-direction: column;
