@@ -3,6 +3,7 @@ import { Textfit } from 'react-textfit';
 import Swipe from 'react-easy-swipe';
 import './App.css';
 import { Button } from './Button';
+import logo from './img/sa.svg';
 
 
 class App extends React.Component {
@@ -95,6 +96,7 @@ class App extends React.Component {
                     <div className="main" style={{backgroundColor: background_color}} > 
                         <div className="header" style={{background: background_color}}>
                             <Button name='clear' disable={this.state.text} action={this.clearInput} />
+                            <div className='logo'><img src={logo} className='img' /></div>
                             <Button name='run' disable={this.state.text} action={this.openFullScreen} />
                         </div>
                         <textarea 
@@ -104,6 +106,11 @@ class App extends React.Component {
                             placeholder={this.state.placeholder} 
                             type="text" 
                             value={this.state.text} />
+                        <div className='store'>
+                            <img src="https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" className='store_badge' />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg" className='store_badge'/>
+                        </div>
+                        <div className="credits">By 🙍 <a href="http://google.com" style={{color: '#ffffff'}}>Natasha Andreeva</a> and 🙇 <a href="http://google.com" style={{color: '#ffffff'}}>Pasha Ugamochi</a> with love from St. Petersburg, Russia.</div>
                     </div>
                 </Swipe>
                 )
@@ -115,13 +122,15 @@ class App extends React.Component {
                     allowMouseEvents={true} >
                     <div className='fullscreen' style={{backgroundColor: background_color}} >
                     {/*height: 20% on the header ain't a neato solution but since we won't have rotation on web and won't have landscape mode on mobile it'll do*/}
-                        <div className="header" style={{background: background_color, flexDirection: 'row-reverse', height: '15%'}}>
+                        <div className="header" style={{background: background_color, flexDirection: 'row-reverse'}}>
                             <Button name='close' disable={this.state.text} action={this.closeFullScreen} />
                         </div>
-                        <div style={{display: 'table', width: '98%', height: '85%', margin: 'auto'}}>
+                        <div style={{width: '98%', flex: 1, margin: 'auto'}}>
+                        <div style={{display: 'table', width: '100%', height: '100%'}}>
 	                        <Textfit max={500} style={{display: 'table-cell', height: '100%', width: '100%', textAlign: 'center', lineHeight: 1, verticalAlign: 'middle'}}>
 	                          {this.state.text}
 	                        </Textfit>
+                        </div>
                         </div>
                     </div>
                 </Swipe> 
