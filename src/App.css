@@ -45,6 +45,7 @@
   align-items: center;
   padding-left: 3%;
   padding-right: 3%;
+  cursor: pointer;
 }
 
 .btn.clear {
@@ -114,6 +115,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 
@@ -131,6 +133,7 @@
   height: 100%;
   width: auto;
   padding-right: 15px;
+  cursor: pointer;
 }
 
 @media all and (orientation:portrait) {
