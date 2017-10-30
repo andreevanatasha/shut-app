@@ -4,14 +4,16 @@ import Swipe from 'react-easy-swipe';
 import './App.css';
 import { Button } from './Button';
 import logo from './img/sa.svg';
+const defaultText = 'An ultimate app for club communication.\nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.';
 
 
 class App extends React.Component {
+
     constructor(props) {
         super(props);
 
         this.state = {
-            text: 'An ultimate app for club communication.\nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.',
+            text: defaultText,
             placeholder: 'Type anything. \nSwipe to change background.',
             background_id: 0,
             fullscreen: false,
@@ -32,6 +34,7 @@ class App extends React.Component {
         this.onSwipeLeft = this.onSwipeLeft.bind(this);
         this.onSwipeRight = this.onSwipeRight.bind(this);
         this.changeOrientation = this.changeOrientation.bind(this);
+        this.setDefaultText = this.setDefaultText.bind(this);
     }
 
     handleChange(e) {
@@ -44,6 +47,10 @@ class App extends React.Component {
 
     clearInput() {
         this.setState({text: ''});
+    }
+
+    setDefaultText() {
+        this.setState({text: defaultText});
     }
 
     openFullScreen() {
@@ -96,7 +103,7 @@ class App extends React.Component {
                     <div className="main" style={{backgroundColor: background_color}} > 
                         <div className="header" style={{background: background_color}}>
                             <Button name='clear' disable={this.state.text} action={this.clearInput} />
-                            <div className='logo'><img src={logo} className='img' /></div>
+                            <div className='logo' onClick={this.setDefaultText} ><img alt='SHUT APP' src={logo} className='img' /></div>
                             <Button name='run' disable={this.state.text} action={this.openFullScreen} />
                         </div>
                         <textarea 
@@ -107,10 +114,10 @@ class App extends React.Component {
                             type="text" 
                             value={this.state.text} />
                         <div className='store'>
-                            <img src="https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" className='store_badge' />
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg" className='store_badge'/>
+                            <img alt='Download on the App Store' src="https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" className='store_badge' />
+                            <img alt='Get it on Google Play' src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg" className='store_badge'/>
                         </div>
-                        <div className="credits">By 🙍 <a href="http://google.com" style={{color: '#ffffff'}}>Natasha Andreeva</a> and 🙇 <a href="http://google.com" style={{color: '#ffffff'}}>Pasha Ugamochi</a> with love from St. Petersburg, Russia.</div>
+                        <div className="credits">By <span role="img" aria-label="girl">🙍</span> <a href="http://google.com" style={{color: '#ffffff'}}>Natasha Andreeva</a> and <span role="img" aria-label="bow">🙇</span> <a href="http://google.com" style={{color: '#ffffff'}}>Pasha Ugamochi</a> with love from St. Petersburg, Russia.</div>
                     </div>
                 </Swipe>
                 )
