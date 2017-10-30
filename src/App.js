@@ -43,7 +43,7 @@ class App extends React.Component {
 
     changeOrientation(){
         //console.log(window.screen.orientation.type)
-        this.setState({orientation: window.screen.orientation.type});
+        this.setState({fullscreen: false, orientation: window.screen.orientation.type});
     }
 
     clearInput() {
