@@ -167,6 +167,23 @@
 
 @media all and (max-width: 360px) {
   .store {
+    height: 50px;
+    padding-top: 10px;
+  }
+
+  .store_badge {
+    padding-right: 5px;
+  }
+
+  .credits {
+    font-size: 0.8em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .store {
     height: 40px;
     padding-top: 10px;
   }
