@@ -4,7 +4,7 @@ import Swipe from 'react-easy-swipe';
 import './App.css';
 import { Button } from './Button';
 import logo from './img/sa.svg';
-const defaultText = 'An ultimate app for club communication.\nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.';
+const defaultText = 'An ultimate app for speechless communication.\nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.';
 
 
 class App extends React.Component {
@@ -24,7 +24,7 @@ class App extends React.Component {
                 '#090707'
             ],
             backgrounds_number: 3,
-            orientation: 'portrait',
+            orientation: '',
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -42,7 +42,8 @@ class App extends React.Component {
     }
 
     changeOrientation(){
-        this.setState({orientation: window.orientation});
+        //console.log(window.screen.orientation.type)
+        this.setState({orientation: window.screen.orientation.type});
     }
 
     clearInput() {
@@ -114,8 +115,8 @@ class App extends React.Component {
                             type="text" 
                             value={this.state.text} />
                         <div className='store'>
-                            <img alt='Download on the App Store' src="https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" className='store_badge' />
-                            <img alt='Get it on Google Play' src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg" className='store_badge'/>
+                            <img alt='Download on the App Store' src="https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" className='store_badge' onClick={function() {alert('Coming soon!')}}/>
+                            <img alt='Get it on Google Play' src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg" className='store_badge' onClick={function() {alert('Coming soon!')}} />
                         </div>
                         <div className="credits">By <span role="img" aria-label="girl">🙍</span> <a href="http://google.com" style={{color: '#ffffff'}}>Natasha Andreeva</a> and <span role="img" aria-label="bow">🙇</span> <a href="http://google.com" style={{color: '#ffffff'}}>Pasha Ugamochi</a> with love from St. Petersburg, Russia.</div>
                     </div>

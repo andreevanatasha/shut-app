@@ -37,23 +37,6 @@
   align-items: center;
 }
 
-@media all and (orientation:portrait) {
-  .header {
-    height: 10%;
-  }
-  .store {
-    height: 10%;
-  }
-}
-
-@media all and (orientation:landscape) {
-  .header {
-    height: 20%;
-  }
-  .store {
-    height: 10%;
-  }
-}
 
 .btn {
   font-size: large;
@@ -133,6 +116,7 @@
   align-items: center;
 }
 
+
 .store {
   display: flex;
   height: 50px;
@@ -147,7 +131,18 @@
   height: 100%;
   width: auto;
   padding-right: 15px;
+}
 
+@media all and (orientation:portrait) {
+  .header {
+    height: 10%;
+  }
+}
+
+@media all and (orientation:landscape) {
+  .header {
+    height: 20%;
+  }
 }
 
 .credits{
@@ -165,4 +160,21 @@
 
 .a {
   color: #ffffff;
+}
+
+@media all and (max-width: 360px) {
+  .store {
+    height: 40px;
+    padding-top: 10px;
+  }
+
+  .store_badge {
+    padding-right: 5px;
+  }
+
+  .credits {
+    font-size: 0.8em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
