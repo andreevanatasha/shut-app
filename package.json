@@ -1,8 +1,8 @@
 {
   "name": "shut-app",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://andreevanatasha.github.io/shut-app",
+  "private": false,
+  "homepage": "http://shutapp.today",
   "dependencies": {
     "gh-pages": "^1.0.0",
     "react": "^15.6.1",

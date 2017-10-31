@@ -3,14 +3,17 @@ import { Textfit } from 'react-textfit';
 import Swipe from 'react-easy-swipe';
 import './App.css';
 import { Button } from './Button';
+import logo from './img/sa.svg';
+const defaultText = 'An ultimate app for speechless communication.\nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.';
 
 
 class App extends React.Component {
+
     constructor(props) {
         super(props);
 
         this.state = {
-            text: '',
+            text: defaultText,
             placeholder: 'Type anything. \nSwipe to change background.',
             background_id: 0,
             fullscreen: false,
@@ -21,8 +24,7 @@ class App extends React.Component {
                 '#090707'
             ],
             backgrounds_number: 3,
-            orientation: 'portrait',
-            disable: true
+            orientation: '',
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -32,26 +34,24 @@ class App extends React.Component {
         this.onSwipeLeft = this.onSwipeLeft.bind(this);
         this.onSwipeRight = this.onSwipeRight.bind(this);
         this.changeOrientation = this.changeOrientation.bind(this);
+        this.setDefaultText = this.setDefaultText.bind(this);
     }
 
     handleChange(e) {
         this.setState({text: e.target.value});
-
-        /* if (e === '') {
-            this.setState({disable: true})
-        } else {
-            this.setState({disable: false})
-        };
-
-        console.log(this.state.disable); */
     }
 
     changeOrientation(){
-        this.setState({orientation: window.orientation});
+        //console.log(window.screen.orientation.type)
+        this.setState({fullscreen: false, orientation: window.screen.orientation.type});
     }
 
     clearInput() {
         this.setState({text: ''});
+    }
+
+    setDefaultText() {
+        this.setState({text: defaultText});
     }
 
     openFullScreen() {
@@ -93,36 +93,18 @@ class App extends React.Component {
     }
 
     render() {
-        let rotate, screenWidth, screenHeight, background_color;
-        screenWidth = window.innerWidth;
-        screenHeight = window.innerHeight;
-        background_color = this.state.backgrounds[this.state.background_id];
-
-        if (screenWidth < screenHeight) {
-            rotate = {
-                width: screenHeight,
-                height: screenWidth,
-                background: background_color,
-                transform: "rotate(90deg)",
-                transformOrigin: "bottom left",
-                top: "-100vw"
-            };
-        } else {
-             rotate = {
-                width: screenWidth,
-                height: screenHeight,
-                background: background_color
-            };
-        };
+        let background_color = this.state.backgrounds[this.state.background_id];
 
         if (this.state.fullscreen === false) { 
             return (
                 <Swipe
                     onSwipeLeft={this.onSwipeLeft}
-                    onSwipeRight={this.onSwipeRight} >
+                    onSwipeRight={this.onSwipeRight} 
+                    allowMouseEvents={true} >
                     <div className="main" style={{backgroundColor: background_color}} > 
                         <div className="header" style={{background: background_color}}>
                             <Button name='clear' disable={this.state.text} action={this.clearInput} />
+                            <div className='logo' onClick={this.setDefaultText} ><img alt='SHUT APP' src={logo} className='img' /></div>
                             <Button name='run' disable={this.state.text} action={this.openFullScreen} />
                         </div>
                         <textarea 
@@ -132,6 +114,11 @@ class App extends React.Component {
                             placeholder={this.state.placeholder} 
                             type="text" 
                             value={this.state.text} />
+                        <div className='store'>
+                            <img alt='Download on the App Store' src="https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" className='store_badge' onClick={function() {alert('Coming soon!')}}/>
+                            <img alt='Get it on Google Play' src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg" className='store_badge' onClick={function() {alert('Coming soon!')}} />
+                        </div>
+                        <div className="credits">By <span role="img" aria-label="girl">🙍</span> <a href="http://google.com" style={{color: '#ffffff'}}>Natasha Andreeva</a> and <span role="img" aria-label="bow">🙇</span> <a href="http://google.com" style={{color: '#ffffff'}}>Pasha Ugamochi</a> with love from St. Petersburg, Russia.</div>
                     </div>
                 </Swipe>
                 )
@@ -139,13 +126,19 @@ class App extends React.Component {
             return (
                <Swipe
                     onSwipeLeft={this.onSwipeLeft}
-                    onSwipeRight={this.onSwipeRight} >
-                    <div className='fullscreen' style={rotate}>
-                        <Button name='close' disable={this.state.text} action={this.closeFullScreen} />
-                        <div style={{display: 'table', height: '98%', width: '98%', margin: 'auto'}}>
-	                        <Textfit max={500} style={{height: '100%', display: 'table-cell', textAlign: 'center', lineHeight: 1, verticalAlign: 'middle', width: '100%'}}>
+                    onSwipeRight={this.onSwipeRight} 
+                    allowMouseEvents={true} >
+                    <div className='fullscreen' style={{backgroundColor: background_color}} >
+                    {/*height: 20% on the header ain't a neato solution but since we won't have rotation on web and won't have landscape mode on mobile it'll do*/}
+                        <div className="header" style={{background: background_color, flexDirection: 'row-reverse'}}>
+                            <Button name='close' disable={this.state.text} action={this.closeFullScreen} />
+                        </div>
+                        <div style={{width: '98%', flex: 1, margin: 'auto'}}>
+                        <div style={{display: 'table', width: '100%', height: '100%'}}>
+	                        <Textfit max={500} style={{display: 'table-cell', height: '100%', width: '100%', textAlign: 'center', lineHeight: 1, verticalAlign: 'middle'}}>
 	                          {this.state.text}
 	                        </Textfit>
+                        </div>
                         </div>
                     </div>
                 </Swipe> 
