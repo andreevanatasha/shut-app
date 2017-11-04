@@ -6,7 +6,7 @@ import { Button } from './Button';
 import logo from './img/sa.svg';
 import appstore from './img/app-store.svg';
 import googleplay from './img/google-play.svg';
-const defaultText = 'An ultimate app for speechless communication.\nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.';
+const defaultText = 'An ultimate app for speechless communication. \nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.';
 
 
 class App extends React.Component {
