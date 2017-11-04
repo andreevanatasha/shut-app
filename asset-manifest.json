@@ -1,13 +1,15 @@
 {
   "main.css": "static/css/main.bbd2b70c.css",
   "main.css.map": "static/css/main.bbd2b70c.css.map",
-  "main.js": "static/js/main.2bd014e1.js",
-  "main.js.map": "static/js/main.2bd014e1.js.map",
+  "main.js": "static/js/main.5292db73.js",
+  "main.js.map": "static/js/main.5292db73.js.map",
   "static/media/Roboto-Black.ttf": "static/media/Roboto-Black.a77b7fc4.ttf",
   "static/media/Roboto-Bold.ttf": "static/media/Roboto-Bold.afa7a91d.ttf",
   "static/media/Roboto-Regular.ttf": "static/media/Roboto-Regular.df7b648c.ttf",
+  "static/media/app-store.svg": "static/media/app-store.2928664f.svg",
   "static/media/clear.svg": "static/media/clear.67d00f37.svg",
   "static/media/close.svg": "static/media/close.8b85bdbc.svg",
+  "static/media/google-play.svg": "static/media/google-play.56b44686.svg",
   "static/media/run.svg": "static/media/run.0aafd2d9.svg",
   "static/media/sa.svg": "static/media/sa.64f52eef.svg"
 }
