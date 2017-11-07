@@ -4,7 +4,9 @@ import Swipe from 'react-easy-swipe';
 import './App.css';
 import { Button } from './Button';
 import logo from './img/sa.svg';
-const defaultText = 'An ultimate app for speechless communication.\nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.';
+import appstore from './img/app-store.svg';
+import googleplay from './img/google-play.svg';
+const defaultText = 'An ultimate app for speechless communication. \nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.';
 
 
 class App extends React.Component {
@@ -21,9 +23,10 @@ class App extends React.Component {
                 '#0000ff',
                 '#FE2370',
                 '#3AF4D5',
-                '#090707'
+                '#090707',
+                '#f9dd37'
             ],
-            backgrounds_number: 3,
+            backgrounds_number: 4,
             orientation: '',
         };
 
@@ -115,10 +118,10 @@ class App extends React.Component {
                             type="text" 
                             value={this.state.text} />
                         <div className='store'>
-                            <img alt='Download on the App Store' src="https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" className='store_badge' onClick={function() {alert('Coming soon!')}}/>
-                            <img alt='Get it on Google Play' src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Get_it_on_Google_play.svg" className='store_badge' onClick={function() {alert('Coming soon!')}} />
+                            <img alt='Download on the App Store' src={appstore} className='store_badge' onClick={function() {alert('Coming soon!')}}/>
+                            <img alt='Get it on Google Play' src={googleplay} className='store_badge' onClick={function() {alert('Coming soon!')}} />
                         </div>
-                        <div className="credits">By <span role="img" aria-label="girl">🙍</span> <a href="http://google.com" style={{color: '#ffffff'}}>Natasha Andreeva</a> and <span role="img" aria-label="bow">🙇</span> <a href="http://google.com" style={{color: '#ffffff'}}>Pasha Ugamochi</a> with love from St. Petersburg, Russia.</div>
+                        <div className="credits">By <span role="img" aria-label="girl">🙍</span> <a href="http://natashaa.me/" style={{color: '#ffffff'}}>Natasha Andreeva</a> and <span role="img" aria-label="bow">🙇</span> <a href="https://www.behance.net/ugamochi" style={{color: '#ffffff'}}>Pasha Ugamochi</a> with love from St. Petersburg, Russia.</div>
                     </div>
                 </Swipe>
                 )
