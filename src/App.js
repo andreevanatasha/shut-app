@@ -6,7 +6,7 @@ import { Button } from './Button';
 import logo from './img/sa.svg';
 import appstore from './img/app-store.svg';
 import googleplay from './img/google-play.svg';
-const defaultText = 'An ultimate app for speechless communication. \nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.';
+const defaultText = 'An ultimate app for silent communication. \nOrder at the bar from the second row. \nTalk to a friend in the crowd. \nUse your phone as a color-coded beacon.';
 
 
 class App extends React.Component {
@@ -97,6 +97,14 @@ class App extends React.Component {
 
     render() {
         let background_color = this.state.backgrounds[this.state.background_id];
+        let store_badge_class
+
+        if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) 
+        {
+            store_badge_class = 'store_badge safari';
+        } else {
+            store_badge_class = 'store_badge';
+        };
 
         if (this.state.fullscreen === false) { 
             return (
@@ -118,8 +126,8 @@ class App extends React.Component {
                             type="text" 
                             value={this.state.text} />
                         <div className='store'>
-                            <img alt='Download on the App Store' src={appstore} className='store_badge' onClick={function() {alert('Coming soon!')}}/>
-                            <img alt='Get it on Google Play' src={googleplay} className='store_badge' onClick={function() {alert('Coming soon!')}} />
+                            <a href="https://itunes.apple.com/app/id1312977489"><img alt='Download on the App Store' src={appstore} className={store_badge_class} /></a>
+                            <img alt='Get it on Google Play' src={googleplay} className={store_badge_class} onClick={function() {alert('Coming soon!')}} />
                         </div>
                         <div className="credits">By <span role="img" aria-label="girl">🙍</span> <a href="http://natashaa.me/" style={{color: '#ffffff'}}>Natasha Andreeva</a> and <span role="img" aria-label="bow">🙇</span> <a href="https://www.behance.net/ugamochi" style={{color: '#ffffff'}}>Pasha Ugamochi</a> with love from St. Petersburg, Russia.</div>
                     </div>
