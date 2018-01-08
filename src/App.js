@@ -127,7 +127,7 @@ class App extends React.Component {
                             value={this.state.text} />
                         <div className='store'>
                             <a href="https://itunes.apple.com/app/id1312977489"><img alt='Download on the App Store' src={appstore} className={store_badge_class} /></a>
-                            <img alt='Get it on Google Play' src={googleplay} className={store_badge_class} onClick={function() {alert('Coming soon!')}} />
+                            <a href="https://play.google.com/store/apps/details?id=today.shutapp"><img alt='Get it on Google Play' src={googleplay} className={store_badge_class} /></a>
                         </div>
                         <div className="credits">By <span role="img" aria-label="girl">🙍</span> <a href="http://natashaa.me/" style={{color: '#ffffff'}}>Natasha Andreeva</a> and <span role="img" aria-label="bow">🙇</span> <a href="https://www.behance.net/ugamochi" style={{color: '#ffffff'}}>Pasha Ugamochi</a> with love from St. Petersburg, Russia.</div>
                     </div>
@@ -144,7 +144,7 @@ class App extends React.Component {
                         <div className="header" style={{background: background_color, flexDirection: 'row-reverse'}}>
                             <Button name='close' disable={this.state.text} action={this.closeFullScreen} />
                         </div>
-                        <div style={{width: '98%', flex: 1, margin: 'auto'}}>
+                        <div className="fullscreen_text" >
                         <div style={{display: 'table', width: '100%', height: '100%'}}>
 	                        <Textfit max={500} style={{display: 'table-cell', height: '100%', width: '100%', textAlign: 'center', lineHeight: 1, verticalAlign: 'middle'}}>
 	                          {this.state.text}
